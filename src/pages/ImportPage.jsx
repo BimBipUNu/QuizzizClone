@@ -150,6 +150,8 @@ export default function ImportPage() {
         {/* Format guide */}
         <div className="format-guide" style={{ marginTop: '24px' }}>
           <h3>📋 Format file Excel yêu cầu (hàng đầu tiên là tiêu đề):</h3>
+          <h3>Biểu mẫu import file: <a href="https://docs.google.com/spreadsheets/d/1SE08dX7uIlVC6Fb3BChzzX68P0rlKOhYUr92INTiZBs/edit?usp=sharing" target="_blank" rel="noopener noreferrer">TẠI ĐÂY</a></h3>
+
           <table className="col-table">
             <thead>
               <tr>
