@@ -84,7 +84,7 @@ export default function QuestionBankPage() {
 
       <div className="container">
         <div className="page-header">
-          <h1 className="page-title">📚 Ngân hàng câu hỏi</h1>
+          <h1 className="page-title">Ngân hàng câu hỏi</h1>
           <p className="page-subtitle">
             Quản lý toàn bộ câu hỏi đã import. Tổng cộng{' '}
             <strong style={{ color: 'var(--primary-light)' }}>{questions.length}</strong> câu hỏi.
@@ -93,7 +93,7 @@ export default function QuestionBankPage() {
 
         {questions.length === 0 ? (
           <div className="empty-state">
-            <div className="empty-icon">📭</div>
+            <div className="empty-icon">Q</div>
             <div className="empty-title">Chưa có câu hỏi nào</div>
             <div className="empty-sub">Import file Excel để bắt đầu</div>
             <button
@@ -101,7 +101,7 @@ export default function QuestionBankPage() {
               className="btn btn-primary"
               onClick={() => navigate('/import')}
             >
-              📤 Import ngay
+              Import ngay
             </button>
           </div>
         ) : (
@@ -109,7 +109,7 @@ export default function QuestionBankPage() {
             <div className="bank-controls">
               <div className="bank-left">
                 <div className="search-bar" style={{ maxWidth: '420px', flex: 1 }}>
-                  <span>🔍</span>
+                  S
                   <input
                     id="bank-search"
                     type="text"
@@ -128,14 +128,26 @@ export default function QuestionBankPage() {
                   className="btn btn-outline btn-sm"
                   onClick={() => navigate('/import')}
                 >
-                  📤 Import thêm
+                  Import thêm
                 </button>
                 <button
                   id="btn-start-quiz-bank"
                   className="btn btn-primary btn-sm"
                   onClick={() => navigate('/')}
                 >
-                  🚀 Bắt đầu quiz
+                  Bắt đầu quiz
+                </button>
+                <button
+                  id="btn-delete-all"
+                  className="btn btn-danger btn-sm"
+                  onClick={() => {
+                    if (window.confirm('Bạn chắc chắn muốn xóa tất cả câu hỏi trong ngân hàng?')) {
+                      localStorage.removeItem('quizmaster_questions')
+                      setQuestions([])
+                    }
+                  }}
+                >
+                  Xóa tất cả
                 </button>
               </div>
             </div>
@@ -262,7 +274,7 @@ export default function QuestionBankPage() {
                               title="Chỉnh sửa"
                               style={{ padding: '6px 10px' }}
                             >
-                              ✏️
+                              Sửa
                             </button>
                             <button
                               className="btn btn-danger btn-sm"
@@ -270,7 +282,7 @@ export default function QuestionBankPage() {
                               title="Xóa"
                               style={{ padding: '6px 10px' }}
                             >
-                              🗑️
+                              Xóa
                             </button>
                           </div>
                         </td>

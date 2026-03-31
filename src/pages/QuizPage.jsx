@@ -58,9 +58,9 @@ export default function QuizPage() {
 
     if (isCorrect) {
       setScore(s => s + 1)
-      setToast({ type: 'correct', msg: '🎉 Chính xác!' })
+      setToast({ type: 'correct', msg: 'Chính xác!' })
     } else {
-      setToast({ type: 'wrong', msg: `❌ Sai! Đáp án: ${OPTION_LETTERS[q.correct - 1]}` })
+      setToast({ type: 'wrong', msg: `Sai! Đáp án: ${OPTION_LETTERS[q.correct - 1]}` })
     }
 
     // Auto advance after 1.5s
@@ -85,7 +85,7 @@ export default function QuizPage() {
     setAnswered(true)
     setSelected(null)
     setResults(prev => [...prev, newResult])
-    setToast({ type: 'wrong', msg: '⏰ Hết giờ!' })
+    setToast({ type: 'wrong', msg: 'Hết giờ!' })
 
     nextTimeoutRef.current = setTimeout(() => {
       goNext(newResult, false)
@@ -155,7 +155,7 @@ export default function QuizPage() {
       {/* Top bar */}
       <div className="quiz-topbar">
         <div className="quiz-score-badge">
-          ⭐ {score} / {current} điểm
+          Điểm: {score} / {current}
         </div>
 
         <div className="quiz-progress-wrap">
@@ -184,7 +184,7 @@ export default function QuizPage() {
         <div className="question-card">
           <div className="question-card-header">
             <div className="q-number-tag">
-              ❓ Câu hỏi {current + 1}
+              Câu hỏi {current + 1}
             </div>
             <div className="question-text">{q.text}</div>
           </div>
@@ -233,7 +233,7 @@ export default function QuizPage() {
             }
           }}
         >
-          🚪 Thoát
+          Thoát
         </button>
       </div>
     </div>

@@ -25,7 +25,7 @@ export default function ImportPage() {
   const handleFile = useCallback(async (file) => {
     if (!file) return
     if (!file.name.match(/\.(xlsx|xls)$/i)) {
-      setError('❌ Chỉ hỗ trợ file Excel (.xlsx, .xls)')
+      setError('Chỉ hỗ trợ file Excel (.xlsx, .xls)')
       return
     }
 
@@ -39,9 +39,9 @@ export default function ImportPage() {
       const merged = [...existing, ...parsed]
       saveQuestions(merged)
       setQuestions(merged)
-      setSuccessMsg(`✅ Import thành công ${parsed.length} câu hỏi! Tổng: ${merged.length} câu.`)
+      setSuccessMsg(`Import thành công ${parsed.length} câu hỏi! Tổng: ${merged.length} câu.`)
     } catch (err) {
-      setError(`❌ ${err.message}`)
+      setError(`${err.message}`)
     } finally {
       setLoading(false)
     }
@@ -82,7 +82,7 @@ export default function ImportPage() {
 
       <div className="container import-page">
         <div className="page-header">
-          <h1 className="page-title">📤 Import câu hỏi từ Excel</h1>
+          <h1 className="page-title">Import câu hỏi từ Excel</h1>
           <p className="page-subtitle">
             Hỗ trợ file .xlsx với hơn 500 câu hỏi. Kéo thả hoặc click để chọn file.
           </p>
@@ -103,15 +103,15 @@ export default function ImportPage() {
           />
           {loading ? (
             <>
-              <span className="upload-icon">⏳</span>
+              <span className="upload-icon">L</span>
               <div className="upload-title">Đang xử lý file...</div>
               <div className="upload-sub">Vui lòng chờ trong giây lát</div>
             </>
           ) : (
             <>
-              <span className="upload-icon">📁</span>
+              <span className="upload-icon">F</span>
               <div className="upload-title">
-                {dragging ? '📂 Thả file vào đây!' : 'Kéo thả file hoặc click để chọn'}
+                {dragging ? 'Thả file vào đây!' : 'Kéo thả file hoặc click để chọn'}
               </div>
               <div className="upload-sub">
                 Hỗ trợ file Excel (.xlsx, .xls) – Tối đa 10MB
@@ -149,7 +149,7 @@ export default function ImportPage() {
 
         {/* Format guide */}
         <div className="format-guide" style={{ marginTop: '24px' }}>
-          <h3>📋 Format file Excel yêu cầu (hàng đầu tiên là tiêu đề):</h3>
+          <h3>Format file Excel yêu cầu (hàng đầu tiên là tiêu đề):</h3>
           <h3>Biểu mẫu import file: <a href="https://docs.google.com/spreadsheets/d/1SE08dX7uIlVC6Fb3BChzzX68P0rlKOhYUr92INTiZBs/edit?usp=sharing" target="_blank" rel="noopener noreferrer">TẠI ĐÂY</a></h3>
 
           <table className="col-table">
@@ -178,13 +178,13 @@ export default function ImportPage() {
             <div className="preview-header">
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flex: 1, flexWrap: 'wrap' }}>
                 <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: '1.3rem', fontWeight: 700 }}>
-                  📚 Ngân hàng câu hỏi
+                  Ngân hàng câu hỏi
                 </h2>
                 <span className="badge badge-primary">{questions.length} câu</span>
               </div>
               <div style={{ display: 'flex', gap: '10px', alignItems: 'center', flexWrap: 'wrap' }}>
                 <div className="search-bar">
-                  <span>🔍</span>
+                  S
                   <input
                     id="search-questions"
                     type="text"
@@ -198,21 +198,21 @@ export default function ImportPage() {
                   className="btn btn-success btn-sm"
                   onClick={() => navigate('/')}
                 >
-                  🚀 Bắt đầu quiz
+                  Bắt đầu quiz
                 </button>
                 <button
                   id="btn-clear-all"
                   className="btn btn-danger btn-sm"
                   onClick={handleClearAll}
                 >
-                  🗑️ Xóa tất cả
+                  Xóa tất cả
                 </button>
               </div>
             </div>
 
             {filtered.length === 0 ? (
               <div className="empty-state">
-                <div className="empty-icon">🔍</div>
+                <div className="empty-icon">S</div>
                 <div className="empty-title">Không tìm thấy câu hỏi</div>
                 <div className="empty-sub">Thử từ khóa khác</div>
               </div>

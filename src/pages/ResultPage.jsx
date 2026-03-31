@@ -40,11 +40,11 @@ export default function ResultPage() {
   const skipped = results.filter(r => r.selected === null).length
 
   const getGrade = () => {
-    if (score >= 90) return { label: '🏆 Xuất sắc!', color: '#10b981' }
-    if (score >= 75) return { label: '🎯 Tốt!', color: '#7c3aed' }
-    if (score >= 60) return { label: '👍 Khá!', color: '#06b6d4' }
-    if (score >= 40) return { label: '📚 Cần cố gắng hơn', color: '#f59e0b' }
-    return { label: '💪 Hãy thử lại!', color: '#ef4444' }
+    if (score >= 90) return { label: 'Xuất sắc!', color: '#10b981' }
+    if (score >= 75) return { label: 'Tốt!', color: '#7c3aed' }
+    if (score >= 60) return { label: 'Khá!', color: '#06b6d4' }
+    if (score >= 40) return { label: 'Cần cố gắng hơn', color: '#f59e0b' }
+    return { label: 'Hãy thử lại!', color: '#ef4444' }
   }
 
   const grade = getGrade()
@@ -129,27 +129,27 @@ export default function ResultPage() {
           <div className="result-stats">
             <div className="result-stat">
               <div className="result-stat-value" style={{ color: 'var(--success-light)' }}>
-                ✅ {correct}
+                Đúng: {correct}
               </div>
               <div className="result-stat-label">Đúng</div>
             </div>
             <div className="result-stat">
               <div className="result-stat-value" style={{ color: 'var(--danger-light)' }}>
-                ❌ {wrong}
+                Sai: {wrong}
               </div>
               <div className="result-stat-label">Sai</div>
             </div>
             {skipped > 0 && (
               <div className="result-stat">
                 <div className="result-stat-value" style={{ color: 'var(--warning-light)' }}>
-                  ⏰ {skipped}
+                  Bỏ qua: {skipped}
                 </div>
                 <div className="result-stat-label">Bỏ qua</div>
               </div>
             )}
             <div className="result-stat">
               <div className="result-stat-value" style={{ color: 'var(--primary-light)' }}>
-                📊 {total}
+                Tổng: {total}
               </div>
               <div className="result-stat-label">Tổng câu</div>
             </div>
@@ -158,17 +158,17 @@ export default function ResultPage() {
           {/* Actions */}
           <div className="result-actions">
             <button id="btn-replay" className="btn btn-primary btn-lg" onClick={replayQuiz}>
-              🔄 Làm lại
+              Làm lại
             </button>
             <button
               id="btn-toggle-review"
               className="btn btn-outline"
               onClick={() => setShowReview(v => !v)}
             >
-              {showReview ? '🔼 Ẩn chi tiết' : '📋 Xem chi tiết'}
+              {showReview ? 'Ẩn chi tiết' : 'Xem chi tiết'}
             </button>
             <button id="btn-home" className="btn btn-ghost" onClick={() => navigate('/')}>
-              🏠 Trang chủ
+              Trang chủ
             </button>
           </div>
         </div>
@@ -176,7 +176,7 @@ export default function ResultPage() {
         {/* Review Section */}
         {showReview && (
           <div className="review-section">
-            <h2 className="section-title">📝 Review từng câu</h2>
+            <h2 className="section-title">Review từng câu</h2>
             {results.map((r, idx) => (
               <div
                 key={r.questionId}
@@ -184,7 +184,7 @@ export default function ResultPage() {
               >
                 <div className="review-q-header">
                   <div className={`review-status-icon ${r.selected === null ? 'icon-skipped' : r.isCorrect ? 'icon-correct' : 'icon-wrong'}`}>
-                    {r.selected === null ? '⏰' : r.isCorrect ? '✓' : '✗'}
+                    {r.selected === null ? 'S' : r.isCorrect ? 'C' : 'W'}
                   </div>
                   <div style={{ flex: 1 }}>
                     <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginBottom: '4px', fontWeight: 600 }}>
@@ -196,11 +196,11 @@ export default function ResultPage() {
 
                 <div className="review-answers">
                   <span className={`answer-pill correct-ans`}>
-                    ✓ {OPTION_LETTERS[r.correct]}: {r.options[r.correct]}
+                    {OPTION_LETTERS[r.correct]}: {r.options[r.correct]}
                   </span>
                   {r.selected !== null && !r.isCorrect && (
                     <span className="answer-pill wrong-ans">
-                      ✗ {OPTION_LETTERS[r.selected]}: {r.options[r.selected]}
+                      {OPTION_LETTERS[r.selected]}: {r.options[r.selected]}
                     </span>
                   )}
                   {r.selected === null && (
@@ -213,7 +213,7 @@ export default function ResultPage() {
                       color: 'var(--warning-light)',
                       border: '1px solid rgba(245,158,11,0.3)'
                     }}>
-                      ⏰ Hết giờ, không trả lời
+                      Hết giờ, không trả lời
                     </span>
                   )}
                 </div>

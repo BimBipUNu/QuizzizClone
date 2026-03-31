@@ -58,7 +58,7 @@ export default function HomePage() {
         {/* Hero */}
         <section className="hero">
           <div className="hero-eyebrow">
-            ⚡ Nền tảng trắc nghiệm thông minh
+            Nền tảng trắc nghiệm thông minh
           </div>
           <h1 className="hero-title">
             Học nhanh hơn với<br />
@@ -75,7 +75,7 @@ export default function HomePage() {
               className="btn btn-primary btn-lg"
               onClick={startQuiz}
             >
-              {totalQ === 0 ? '📤 Import câu hỏi trước' : '🚀 Bắt đầu làm bài'}
+              {totalQ === 0 ? 'Import câu hỏi trước' : 'Bắt đầu làm bài'}
             </button>
             <button
               id="btn-import"
@@ -89,17 +89,17 @@ export default function HomePage() {
           {/* Stats */}
           <div className="stats-grid">
             <div className="stat-card">
-              <div className="stat-icon">📚</div>
+              <div className="stat-icon">Q</div>
               <div className="stat-value">{totalQ.toLocaleString()}</div>
               <div className="stat-label">Câu hỏi đã import</div>
             </div>
             <div className="stat-card">
-              <div className="stat-icon">⏱️</div>
+              <div className="stat-icon">T</div>
               <div className="stat-value">20s</div>
               <div className="stat-label">Mỗi câu hỏi</div>
             </div>
             <div className="stat-card">
-              <div className="stat-icon">🎯</div>
+              <div className="stat-icon">A</div>
               <div className="stat-value">5</div>
               <div className="stat-label">Lựa chọn tối đa</div>
             </div>
@@ -108,11 +108,11 @@ export default function HomePage() {
 
         {/* Features */}
         <section className="features-section">
-          <h2 className="section-title">✨ Tính năng nổi bật</h2>
+          <h2 className="section-title">Tính năng nổi bật</h2>
           <div className="features-grid">
             <div className="feature-card">
               <div className="feature-icon" style={{ background: 'linear-gradient(135deg, rgba(124,58,237,0.3), rgba(236,72,153,0.2))' }}>
-                📤
+                U
               </div>
               <div className="feature-title">Import từ Excel</div>
               <p className="feature-desc">
@@ -122,7 +122,7 @@ export default function HomePage() {
             </div>
             <div className="feature-card">
               <div className="feature-icon" style={{ background: 'linear-gradient(135deg, rgba(6,182,212,0.3), rgba(124,58,237,0.2))' }}>
-                ⏱️
+                T
               </div>
               <div className="feature-title">Timer trực quan</div>
               <p className="feature-desc">
@@ -132,7 +132,7 @@ export default function HomePage() {
             </div>
             <div className="feature-card">
               <div className="feature-icon" style={{ background: 'linear-gradient(135deg, rgba(16,185,129,0.3), rgba(6,182,212,0.2))' }}>
-                🎨
+                D
               </div>
               <div className="feature-title">Giao diện Quizziz</div>
               <p className="feature-desc">
@@ -142,7 +142,7 @@ export default function HomePage() {
             </div>
             <div className="feature-card">
               <div className="feature-icon" style={{ background: 'linear-gradient(135deg, rgba(245,158,11,0.3), rgba(239,68,68,0.2))' }}>
-                📊
+                S
               </div>
               <div className="feature-title">Kết quả chi tiết</div>
               <p className="feature-desc">
@@ -151,7 +151,7 @@ export default function HomePage() {
             </div>
             <div className="feature-card">
               <div className="feature-icon" style={{ background: 'linear-gradient(135deg, rgba(236,72,153,0.3), rgba(245,158,11,0.2))' }}>
-                🎲
+                R
               </div>
               <div className="feature-title">Ngẫu nhiên câu hỏi</div>
               <p className="feature-desc">
@@ -160,7 +160,7 @@ export default function HomePage() {
             </div>
             <div className="feature-card">
               <div className="feature-icon" style={{ background: 'linear-gradient(135deg, rgba(124,58,237,0.3), rgba(16,185,129,0.2))' }}>
-                💾
+                L
               </div>
               <div className="feature-title">Lưu trữ offline</div>
               <p className="feature-desc">
@@ -175,7 +175,7 @@ export default function HomePage() {
       {showModal && (
         <div className="modal-overlay" onClick={(e) => e.target === e.currentTarget && setShowModal(false)}>
           <div className="modal">
-            <div className="modal-title">🚀 Cấu hình bài quiz</div>
+            <div className="modal-title">Cấu hình bài quiz</div>
             <div className="modal-sub">
               Bạn có {totalQ.toLocaleString()} câu hỏi trong ngân hàng đề.
               Chọn số câu muốn làm:
@@ -207,7 +207,7 @@ export default function HomePage() {
               color: 'var(--text-secondary)',
               marginBottom: '8px'
             }}>
-              ⏱️ Thời gian ước tính: <strong style={{ color: 'var(--primary-light)' }}>
+              Thời gian ước tính: <strong style={{ color: 'var(--primary-light)' }}>
                 ~{Math.ceil(quizCount * 20 / 60)} phút
               </strong>
             </div>
@@ -225,7 +225,7 @@ export default function HomePage() {
                 className="btn btn-primary"
                 onClick={confirmStart}
               >
-                🚀 Bắt đầu ngay
+                Bắt đầu ngay
               </button>
             </div>
           </div>

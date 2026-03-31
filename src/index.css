@@ -9,7 +9,7 @@
 }
 
 :root {
-  /* Color Palette */
+  /* Color Palette - Brands */
   --primary: #7c3aed;
   --primary-light: #8b5cf6;
   --primary-dark: #6d28d9;
@@ -24,10 +24,11 @@
   --warning: #f59e0b;
   --warning-light: #fbbf24;
 
-  /* Neutrals */
+  /* Theme Colors (Default: Dark) */
   --bg: #0f0a1e;
   --bg-card: #1a1035;
   --bg-surface: #231545;
+  --bg-nav: rgba(15, 10, 30, 0.85);
   --border: rgba(124, 58, 237, 0.25);
   --text-primary: #f8fafc;
   --text-secondary: #c4b5fd;
@@ -61,6 +62,25 @@
   /* Typography */
   --font-heading: 'Outfit', sans-serif;
   --font-body: 'Nunito', sans-serif;
+}
+
+[data-theme='light'] {
+  --bg: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-surface: #f1f5f9;
+  --bg-nav: rgba(248, 250, 252, 0.85);
+  --border: rgba(124, 58, 237, 0.15);
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+
+  --grad-surface: linear-gradient(135deg, #ffffff, #f1f5f9);
+  --grad-card: linear-gradient(145deg, rgba(124,58,237,0.05), rgba(236,72,153,0.03));
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.1);
+  --shadow-glow: 0 0 20px rgba(124, 58, 237, 0.15);
 }
 
 html {
@@ -146,7 +166,7 @@ body {
   z-index: 100;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  background: rgba(15, 10, 30, 0.85);
+  background: var(--bg-nav);
   border-bottom: 1px solid var(--border);
   padding: 16px 0;
 }
@@ -945,7 +965,7 @@ body {
   grid-template-columns: 1fr 1fr;
   gap: 12px;
   padding: 20px;
-  background: rgba(15, 10, 30, 0.5);
+  background: var(--bg-surface);
   border: 1px solid var(--border);
   border-radius: 0 0 var(--radius-lg) var(--radius-lg);
 }
