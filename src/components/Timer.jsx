@@ -1,13 +1,11 @@
 import { useState, useEffect } from 'react'
 
-const TIMER_DURATION = 20 // seconds
-
-export default function Timer({ onTimeout, running, questionKey }) {
-  const [timeLeft, setTimeLeft] = useState(TIMER_DURATION)
+export default function Timer({ onTimeout, running, questionKey, duration = 20 }) {
+  const [timeLeft, setTimeLeft] = useState(duration)
 
   useEffect(() => {
-    setTimeLeft(TIMER_DURATION)
-  }, [questionKey])
+    setTimeLeft(duration)
+  }, [questionKey, duration])
 
   useEffect(() => {
     if (!running) return
@@ -21,7 +19,7 @@ export default function Timer({ onTimeout, running, questionKey }) {
 
   const radius = 22
   const circumference = 2 * Math.PI * radius
-  const progress = timeLeft / TIMER_DURATION
+  const progress = timeLeft / duration
   const offset = circumference * (1 - progress)
 
   const getColor = () => {

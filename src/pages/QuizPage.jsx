@@ -176,6 +176,7 @@ export default function QuizPage() {
           questionKey={current}
           running={timerRunning}
           onTimeout={handleTimeout}
+          duration={q.time}
         />
       </div>
 

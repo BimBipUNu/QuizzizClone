@@ -168,6 +168,7 @@ export default function ImportPage() {
               <tr><td><strong>Option 4</strong></td><td>Đáp án 4 (tùy chọn)</td><td>Huế</td></tr>
               <tr><td><strong>Option 5</strong></td><td>Đáp án 5 (tùy chọn)</td><td>–</td></tr>
               <tr><td><strong>Correct</strong></td><td>Số thứ tự đáp án đúng (1–5)</td><td>1</td></tr>
+              <tr><td><strong>Time</strong></td><td>Thời gian làm bài (giây) – Mặc định 20s</td><td>30</td></tr>
             </tbody>
           </table>
         </div>

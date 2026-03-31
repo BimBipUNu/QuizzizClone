@@ -49,6 +49,7 @@ export function parseExcelFile(file) {
         const colOpt4 = findCol('option 4', 'answer 4', 'd', 'đáp án 4', 'opt4', 'choice 4')
         const colOpt5 = findCol('option 5', 'answer 5', 'e', 'đáp án 5', 'opt5', 'choice 5')
         const colCorrect = findCol('correct', 'answer', 'correct answer', 'đáp án đúng', 'dap an dung', 'key')
+        const colTime = findCol('time', 'thời gian', 'giây', 'duration', 'seconds', 'limit')
 
         if (!colText) {
           reject(new Error('Không tìm thấy cột "Question Text". Hãy kiểm tra tiêu đề cột.'))
@@ -92,11 +93,21 @@ export function parseExcelFile(file) {
           // Clamp to valid range
           correctIndex = Math.max(1, Math.min(correctIndex, options.length))
 
+          // Parse time if exists, default to 20
+          let time = 20
+          if (colTime && row[colTime]) {
+            const parsedTime = parseInt(row[colTime], 10)
+            if (!isNaN(parsedTime) && parsedTime > 0) {
+              time = parsedTime
+            }
+          }
+
           questions.push({
             id: `q_${Date.now()}_${index}`,
             text,
             options,
             correct: correctIndex, // 1-indexed
+            time,
           })
         })
 
