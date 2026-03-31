@@ -26,7 +26,6 @@ export default function Navbar() {
     <nav className="navbar">
       <div className="navbar-inner">
         <Link to="/" className="logo">
-          <div className="logo-icon">Q</div>
           <div className="logo-text">
             Quiz<span>Master</span>
           </div>

@@ -89,17 +89,14 @@ export default function HomePage() {
           {/* Stats */}
           <div className="stats-grid">
             <div className="stat-card">
-              <div className="stat-icon">Q</div>
               <div className="stat-value">{totalQ.toLocaleString()}</div>
               <div className="stat-label">Câu hỏi đã import</div>
             </div>
             <div className="stat-card">
-              <div className="stat-icon">T</div>
               <div className="stat-value">20s</div>
               <div className="stat-label">Mỗi câu hỏi</div>
             </div>
             <div className="stat-card">
-              <div className="stat-icon">A</div>
               <div className="stat-value">5</div>
               <div className="stat-label">Lựa chọn tối đa</div>
             </div>
@@ -111,9 +108,6 @@ export default function HomePage() {
           <h2 className="section-title">Tính năng nổi bật</h2>
           <div className="features-grid">
             <div className="feature-card">
-              <div className="feature-icon" style={{ background: 'linear-gradient(135deg, rgba(124,58,237,0.3), rgba(236,72,153,0.2))' }}>
-                U
-              </div>
               <div className="feature-title">Import từ Excel</div>
               <p className="feature-desc">
                 Hỗ trợ file .xlsx với 500+ câu hỏi. Kéo thả hoặc click để upload.
@@ -121,9 +115,6 @@ export default function HomePage() {
               </p>
             </div>
             <div className="feature-card">
-              <div className="feature-icon" style={{ background: 'linear-gradient(135deg, rgba(6,182,212,0.3), rgba(124,58,237,0.2))' }}>
-                T
-              </div>
               <div className="feature-title">Timer trực quan</div>
               <p className="feature-desc">
                 Bộ đếm ngược 20 giây mỗi câu với vòng tròn động, đổi màu cảnh báo
@@ -131,9 +122,6 @@ export default function HomePage() {
               </p>
             </div>
             <div className="feature-card">
-              <div className="feature-icon" style={{ background: 'linear-gradient(135deg, rgba(16,185,129,0.3), rgba(6,182,212,0.2))' }}>
-                D
-              </div>
               <div className="feature-title">Giao diện Quizziz</div>
               <p className="feature-desc">
                 Các lựa chọn nhiều màu sắc, animation phản hồi ngay lập tức, hiển thị
@@ -141,27 +129,18 @@ export default function HomePage() {
               </p>
             </div>
             <div className="feature-card">
-              <div className="feature-icon" style={{ background: 'linear-gradient(135deg, rgba(245,158,11,0.3), rgba(239,68,68,0.2))' }}>
-                S
-              </div>
               <div className="feature-title">Kết quả chi tiết</div>
               <p className="feature-desc">
                 Xem điểm số, tỷ lệ đúng, và review lại tất cả câu hỏi sau khi kết thúc bài.
               </p>
             </div>
             <div className="feature-card">
-              <div className="feature-icon" style={{ background: 'linear-gradient(135deg, rgba(236,72,153,0.3), rgba(245,158,11,0.2))' }}>
-                R
-              </div>
               <div className="feature-title">Ngẫu nhiên câu hỏi</div>
               <p className="feature-desc">
                 Chọn số lượng câu muốn làm. Hệ thống tự động trộn ngẫu nhiên từ ngân hàng đề.
               </p>
             </div>
             <div className="feature-card">
-              <div className="feature-icon" style={{ background: 'linear-gradient(135deg, rgba(124,58,237,0.3), rgba(16,185,129,0.2))' }}>
-                L
-              </div>
               <div className="feature-title">Lưu trữ offline</div>
               <p className="feature-desc">
                 Câu hỏi được lưu vào trình duyệt, không cần server. Làm bài bất cứ lúc nào.

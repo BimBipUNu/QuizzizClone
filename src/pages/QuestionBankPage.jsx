@@ -93,7 +93,7 @@ export default function QuestionBankPage() {
 
         {questions.length === 0 ? (
           <div className="empty-state">
-            <div className="empty-icon">Q</div>
+            <div style={{ marginBottom: '24px' }}></div>
             <div className="empty-title">Chưa có câu hỏi nào</div>
             <div className="empty-sub">Import file Excel để bắt đầu</div>
             <button

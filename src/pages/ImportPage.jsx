@@ -95,21 +95,13 @@ export default function ImportPage() {
           onDragLeave={() => setDragging(false)}
           onDrop={onDrop}
         >
-          <input
-            type="file"
-            accept=".xlsx,.xls"
-            onChange={onFileInput}
-            id="file-input"
-          />
           {loading ? (
             <>
-              <span className="upload-icon">L</span>
               <div className="upload-title">Đang xử lý file...</div>
               <div className="upload-sub">Vui lòng chờ trong giây lát</div>
             </>
           ) : (
             <>
-              <span className="upload-icon">F</span>
               <div className="upload-title">
                 {dragging ? 'Thả file vào đây!' : 'Kéo thả file hoặc click để chọn'}
               </div>
@@ -123,6 +115,12 @@ export default function ImportPage() {
               </div>
             </>
           )}
+          <input
+            type="file"
+            accept=".xlsx,.xls"
+            onChange={onFileInput}
+            id="file-input"
+          />
         </div>
 
         {/* Notifications */}
@@ -185,8 +183,7 @@ export default function ImportPage() {
               </div>
               <div style={{ display: 'flex', gap: '10px', alignItems: 'center', flexWrap: 'wrap' }}>
                 <div className="search-bar">
-                  S
-                  <input
+                                    <input
                     id="search-questions"
                     type="text"
                     placeholder="Tìm kiếm câu hỏi..."

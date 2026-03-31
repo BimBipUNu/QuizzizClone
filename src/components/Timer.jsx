@@ -53,5 +53,3 @@ export default function Timer({ onTimeout, running, questionKey, duration = 20 }
     </div>
   )
 }
-
-export { TIMER_DURATION }
